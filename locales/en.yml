@@ -2,3 +2,9 @@ en:
   lita:
     handlers:
       broadcast:
+        help:
+          broadcast_key: "tell #room1 #room2: <your message here>"
+          broadcast_value: "Broadcast a message to multiple rooms."
+        broadcast:
+          not_found: "Channel '%{channel}' does not exist."
+          says: "says"
