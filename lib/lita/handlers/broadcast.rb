@@ -26,6 +26,7 @@ module Lita
 
       def channel_for(identifier)
         room = Lita::Room.fuzzy_find(identifier)
+        room = Lita::Room.find_by_name(identifier.to_s.sub(/^#+/, '')) if room.nil? && robot.config.robot.adapter == :slack
         Source.new(room: room) if room
       end
 
